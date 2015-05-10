@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>meegotouch-timepicker-disc-hours-landscape.png</file>
+        <file>meegotouch-timepicker-disc-hours-portrait.png</file>
+        <file>meegotouch-timepicker-disc-minutes-landscape.png</file>
+        <file>meegotouch-timepicker-disc-minutes-portrait.png</file>
+        <file>meegotouch-timepicker-light-1-landscape.png</file>
+        <file>meegotouch-timepicker-light-1-portrait.png</file>
+    </qresource>
+    <qresource prefix="/widget">
+        <file>TimePicker.qml</file>
+        <file>TimePickerCustom.qml</file>
+        <file>Button.qml</file>
+        <file>Slider.qml</file>
+        <file>Text.qml</file>
+        <file>BoundingBox.qml</file>
+    </qresource>
+    <qresource prefix="/music">
+        <file>alarm-clock.wav</file>
+        <file>bubble-6.wav</file>
+        <file>tick-tock.wav</file>
+    </qresource>
+</RCC>

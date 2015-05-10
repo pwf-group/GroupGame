@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/game">
+        <file>TimeBoomIntro.qml</file>
+        <file>TimeBoomGame.qml</file>
+        <file>BottleLuckIntro.qml</file>
+        <file>BottleLuckGame.qml</file>
+        <file>BuzzerBeaterIntro.qml</file>
+        <file>BuzzerBeaterGame.qml</file>
+        <file>TruthOrDareIntro.qml</file>
+        <file>TruthOrDareGame.qml</file>
+        <file>TimeBombGame2.qml</file>
+    </qresource>
+</RCC>
