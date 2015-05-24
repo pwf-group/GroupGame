@@ -21,19 +21,20 @@ Item {
         delegate: Item {
             width: grid.cellWidth
             height: grid.cellHeight
-            Rectangle {
-                anchors.fill: parent
-                opacity: 0.5
-                color: {
-                    if (grid.winner == -1)
-                        return "lightsteelblue"
-                    else if (grid.winner == index)
-                        return "green"
-                    else
-                        return "red"
-                }
 
-                Behavior on color { ColorAnimation{duration: 250} }
+            Image {
+                width: parent.width - 16 * dp
+                height: parent.height - 16 * dp
+                anchors.centerIn: parent
+
+                source: {
+                    if (grid.winner == -1)
+                        return "qrc:/image/buzzer_default.png"
+                    else if (grid.winner == index)
+                        return "qrc:/image/buzzer_green.png"
+                    else
+                        return "qrc:/image/buzzer_red.png"
+                }
             }
 
             Widget.Text {

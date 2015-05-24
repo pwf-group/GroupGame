@@ -9,5 +9,7 @@
         <file>TruthOrDareIntro.qml</file>
         <file>TruthOrDareGame.qml</file>
         <file>TimeBombGame2.qml</file>
+        <file>DiceIntro.qml</file>
+        <file>DiceGame.qml</file>
     </qresource>
 </RCC>

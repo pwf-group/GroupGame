@@ -3,5 +3,9 @@
         <file>main_bg.jpg</file>
         <file>bottle_table.jpg</file>
         <file>bottle.png</file>
+        <file>dice_sprite.png</file>
+        <file>buzzer_default.png</file>
+        <file>buzzer_green.png</file>
+        <file>buzzer_red.png</file>
     </qresource>
 </RCC>
