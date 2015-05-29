@@ -4,29 +4,50 @@ import "../widget" as Widget
 Item {
     id: root
     property int dice: 1
+    property bool roll: false
 
-    Widget.Text {
-        anchors.bottom: sprite.top
-        anchors.horizontalCenter: sprite.horizontalCenter
-        anchors.bottomMargin: 15 * dp
-        text: sprite.currentSprite
-        font.pixelSize: 30 * dp
+    Column {
+        id: column
+        anchors.centerIn: parent
+        width: 220 * dp
+        spacing: 20 * dp
+
+        Repeater {
+            id: colRepeater
+            model: (dice)/2
+
+            Row {
+                id: row
+                anchors.horizontalCenter: column.horizontalCenter
+                spacing: 20 * dp
+
+                Repeater {
+                    id: rowRepeater
+                    model: {
+                        if ((index == colRepeater.count-1) && (dice % 2))
+                            return 1
+                        else
+                            return 2
+                    }
+
+                    Widget.Dice {
+                        width: 100 * dp
+                        height: 100 * dp
+                        running: roll
+                    }
+                }
+            }
+        }
     }
 
-    SpriteSequence {
-        id: sprite
-        anchors.centerIn: parent
-        width: 50 * dp
-        height: 50 * dp
-        running: false
-        goalSprite: ""
+    Widget.Button {
+        anchors.horizontalCenter: column.horizontalCenter
+        anchors.top: column.bottom
+        anchors.topMargin: 40 * dp
 
-        Sprite {
-            name: "dice"
-            source: "qrc:/image/dice_sprite.png"
-            frameCount: 144
-            frameHeight: 46
-            frameWidth: 46
+        text: !roll? "ROLL":"STOP"
+        onClicked: {
+            roll = !roll
         }
     }
 }

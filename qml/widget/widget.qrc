@@ -6,6 +6,10 @@
         <file>meegotouch-timepicker-disc-minutes-portrait.png</file>
         <file>meegotouch-timepicker-light-1-landscape.png</file>
         <file>meegotouch-timepicker-light-1-portrait.png</file>
+        <file>dice_sprite.png</file>
+        <file>minutes_display.png</file>
+        <file>overall look.png</file>
+        <file>seconds_display.png</file>
     </qresource>
     <qresource prefix="/widget">
         <file>TimePicker.qml</file>
@@ -14,6 +18,7 @@
         <file>Slider.qml</file>
         <file>Text.qml</file>
         <file>BoundingBox.qml</file>
+        <file>Dice.qml</file>
     </qresource>
     <qresource prefix="/music">
         <file>alarm-clock.wav</file>

@@ -27,6 +27,14 @@ Item {
         }
     }
 
+    Image {
+        id: bombBg
+        anchors.fill: parent
+        source: "qrc:/image/bomb_background.png"
+        sourceSize.width: root.width
+        sourceSize.height: root.height
+    }
+
     Audio {
         id: alarm
         autoPlay: false
@@ -42,10 +50,7 @@ Item {
 
     Column {
         anchors.centerIn: parent
-        Widget.Text {
-            font.pixelSize: 50 * dp
-            text: "Image of Bomb"
-        }
+
         Widget.Button {
             anchors.horizontalCenter: parent.horizontalCenter
             visible: !started

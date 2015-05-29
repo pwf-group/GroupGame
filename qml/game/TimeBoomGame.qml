@@ -7,6 +7,7 @@ Item {
     id: root
 
     Column {
+        id: column
         anchors.centerIn: parent
         spacing: 20 * dp
 
@@ -15,16 +16,9 @@ Item {
             width: minSize < 330 * dp? minSize - 30 * dp : 300 * dp
             height: width
 
-            function orientationSuffix() {
-                if (root.width<root.height)
-                    return "portrait.png"
-                else
-                    return "landscape.png"
-            }
-
-            backgroundImage: "qrc:/image/meegotouch-timepicker-light-1-" + orientationSuffix()
-            hourDotImage: "qrc:/image/meegotouch-timepicker-disc-hours-" + orientationSuffix()
-            minutesDotImage: "qrc:/image/meegotouch-timepicker-disc-minutes-" + orientationSuffix()
+            backgroundImage: "qrc:/image/overall look.png"
+            hourDotImage: "qrc:/image/minutes_display.png"
+            minutesDotImage: "qrc:/image/seconds_display.png"
         }
 
         Widget.Text {
