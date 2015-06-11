@@ -78,28 +78,6 @@ Item {
         property int centerY: parent.height / 2
 
         Image {
-            id: hourDot
-            anchors.fill: parent
-            rotation: timePicker.minutes * 6
-            smooth: true
-        }
-
-        Text {
-            id: hourText
-            property int hourRadius: parent.width * 0.055
-            property int hourTrackRadius: parent.width * 0.16
-
-            x: (parent.centerX - hourRadius) + hourTrackRadius
-               * Math.cos(timePicker.minutes * timePicker.hourGradDelta * (Math.PI / 180) - (Math.PI / 2));
-            y: (parent.centerY - hourRadius) + hourTrackRadius
-               * Math.sin(timePicker.minutes * timePicker.hourGradDelta * (Math.PI / 180) - (Math.PI / 2));
-
-            font.pixelSize: timePicker.width * 0.1
-
-            text: (timePicker.minutes < 10 ? "0" : "") + timePicker.minutes
-        }
-
-        Image {
             id: minuteDot
             anchors.fill: parent
             rotation: timePicker.seconds * 6
@@ -119,6 +97,28 @@ Item {
             font.pixelSize: timePicker.width * 0.1
             color: "#CCCCCC"
             text: (timePicker.seconds < 10 ? "0" : "") + timePicker.seconds
+        }
+
+        Image {
+            id: hourDot
+            anchors.fill: parent
+            rotation: timePicker.minutes * 6
+            smooth: true
+        }
+
+        Text {
+            id: hourText
+            property int hourRadius: parent.width * 0.055
+            property int hourTrackRadius: parent.width * 0.16
+
+            x: (parent.centerX - hourRadius) + hourTrackRadius
+               * Math.cos(timePicker.minutes * timePicker.hourGradDelta * (Math.PI / 180) - (Math.PI / 2));
+            y: (parent.centerY - hourRadius) + hourTrackRadius
+               * Math.sin(timePicker.minutes * timePicker.hourGradDelta * (Math.PI / 180) - (Math.PI / 2));
+
+            font.pixelSize: timePicker.width * 0.1
+
+            text: (timePicker.minutes < 10 ? "0" : "") + timePicker.minutes
         }
     }
 
