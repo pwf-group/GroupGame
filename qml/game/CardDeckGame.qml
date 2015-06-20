@@ -9,7 +9,12 @@ Item {
 
     property var cardsList: []
 
+    function spawnCard() {
+        CardsCreation.createSpriteObjects()
+    }
+
     Column {
+        z: 2
         anchors {
             horizontalCenter: parent.horizontalCenter
             bottom: parent.bottom
@@ -20,7 +25,7 @@ Item {
         Widget.Button {
             anchors.horizontalCenter: parent.horizontalCenter
             text: "Spawn Card"
-            onClicked: CardsCreation.createSpriteObjects()
+            onClicked: root.spawnCard()
         }
         Widget.Button {
             anchors.horizontalCenter: parent.horizontalCenter
