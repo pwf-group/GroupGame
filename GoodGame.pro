@@ -2,6 +2,8 @@ TEMPLATE = app
 
 QT += qml quick
 
+ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android-sources
+
 SOURCES += \
     src/main.cpp
 

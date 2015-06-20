@@ -24,7 +24,7 @@ Item {
         font.family: "Montague"
         //font.family: "Karmatic Arcade"
         color: "#000000"
-        text: "Ice Breaker"
+        text: "Good Game"
     }
 
     Flickable {
@@ -88,6 +88,7 @@ Item {
         ListElement { name: "Time Bomb"; link: "qrc:/game/TimeBoomIntro.qml" }
         ListElement { name: "Dice"; link: "qrc:/game/DiceIntro.qml" }
         ListElement { name: "Bottle Luck"; link: "qrc:/game/BottleLuckIntro.qml" }
+        ListElement { name: "Card Deck"; link: "qrc:/game/CardDeckIntro.qml" }
         ListElement { name: "Truth or Dare"; link: "qrc:/game/TruthOrDareIntro.qml" }
         ListElement { name: "Buzzer Beater"; link: "qrc:/game/BuzzerBeaterIntro.qml" }
         ListElement { name: "Exit"; link: "" }

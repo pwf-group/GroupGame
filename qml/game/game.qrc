@@ -11,5 +11,9 @@
         <file>TimeBombGame2.qml</file>
         <file>DiceIntro.qml</file>
         <file>DiceGame.qml</file>
+        <file>CardsCreation.js</file>
+        <file>CardDeckIntro.qml</file>
+        <file>CardDeckGame.qml</file>
+        <file>TruthOrDareCreation.js</file>
     </qresource>
 </RCC>

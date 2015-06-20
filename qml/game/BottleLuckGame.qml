@@ -16,21 +16,6 @@ Item {
         source: "qrc:/image/bottle_table.jpg"
     }
 
-    Column {
-        CheckBox {
-            checked: velocityTimer.running
-            text: "velocityTimer"
-        }
-        CheckBox {
-            checked: stopTimer.running
-            text: "stopTimer"
-        }
-        CheckBox {
-            checked: bottleAnimation.running
-            text: "bottleAnimation"
-        }
-    }
-
     Image {
         id: bottle
         anchors.centerIn: parent
@@ -85,7 +70,7 @@ Item {
             animationDuration = defaultSpinSpeed
             velocityTimer.stop()
             stopTimer.stop()
-            bottleAnimation.start()
+            bottleAnimation.restart()
         }
         onReleased: {
             // start sequence of auto stop
