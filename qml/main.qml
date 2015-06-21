@@ -17,7 +17,7 @@ ApplicationWindow {
     Audio {
         id: sound
         autoPlay: false
-        source: "qrc:/music/bubble-6.wav"
+        source: "qrc:/music/catch.wav"
     }
 
     Image {

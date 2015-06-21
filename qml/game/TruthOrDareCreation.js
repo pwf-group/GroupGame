@@ -18,8 +18,8 @@ function finishCreation() {
         {
             cardsList.push(sprite)
             sprite.source = "qrc:/cards/cards/td_" + Math.floor(Math.random()*2) + ".png"
-            sprite.y = (root.height/2 - (sprite.height-10*dp)) + Math.random()*sprite.height*dp;
-            sprite.x = (root.width/2 - (sprite.width-10*dp)) + Math.random()*sprite.width*dp;
+            sprite.y = (root.height/2 - (sprite.height-10*dp)) + Math.random()*sprite.height;
+            sprite.x = (root.width/2 - (sprite.width-10*dp)) + Math.random()*sprite.width;
         }
     } else if (component.status == Component.Error) {
         // Error Handling

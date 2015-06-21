@@ -7,5 +7,6 @@
         <file>buzzer_green.png</file>
         <file>buzzer_red.png</file>
         <file>bomb_background.png</file>
+        <file>card_background.png</file>
     </qresource>
 </RCC>

@@ -18,13 +18,15 @@ Item {
         cellHeight: portrait? (height*2/(players+1)) : (height/2)
 
         property int winner: -1
+        property int minSize: cellWidth<cellHeight ? cellWidth:cellHeight
+
         delegate: Item {
             width: grid.cellWidth
             height: grid.cellHeight
 
             Image {
-                width: parent.width - 16 * dp
-                height: parent.height - 16 * dp
+                width: grid.minSize - 16 * dp
+                height: grid.minSize - 16 * dp
                 anchors.centerIn: parent
 
                 source: {

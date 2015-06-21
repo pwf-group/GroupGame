@@ -11,7 +11,7 @@ SpriteSequence {
         //sprite_seq.jumpTo(name)
     }
 
-    readonly property int diceSize: 650
+    readonly property int diceSize: 325
 
     Sprite {
         name: "1"

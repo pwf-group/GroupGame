@@ -64,7 +64,7 @@ Item {
         Widget.Slider {
             id: slider
             minimumValue: 1
-            maximumValue: 5
+            maximumValue: 6
             value: 1
             stepSize: 1
         }
