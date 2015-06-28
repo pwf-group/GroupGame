@@ -5,6 +5,14 @@ import "../widget" as Widget
 
 Item {
     id: root
+
+    Stack.onStatusChanged: {
+        // change so that loading don't feel hang
+        if(Stack.status == Stack.Active) {
+            tracker.sendAppView("BuzzerBeaterGame")
+        }
+    }
+
     property int players: 4
 
     GridView {

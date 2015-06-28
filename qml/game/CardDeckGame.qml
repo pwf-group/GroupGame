@@ -8,6 +8,13 @@ import "CardsCreation.js" as CardsCreation
 Item {
     id: root
 
+    Stack.onStatusChanged: {
+        // change so that loading don't feel hang
+        if(Stack.status == Stack.Active) {
+            tracker.sendAppView("CardDeckGame")
+        }
+    }
+
     property var cardsList: []
     property var showedCards: []
 

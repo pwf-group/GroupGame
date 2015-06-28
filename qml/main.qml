@@ -1,8 +1,10 @@
 import QtQuick 2.3
 import QtQuick.Controls 1.2
 import QtMultimedia 5.0
+import GoogleAnalytics 0.1
 
 ApplicationWindow {
+    id: app
     visible: true
     width: 480
     height: 720
@@ -13,6 +15,16 @@ ApplicationWindow {
 
     FontLoader{ source: "qrc:/ka1.ttf"}
     FontLoader{ source: "qrc:/Montague.ttf"}
+
+    Component.onDestruction: tracker.endSession()
+
+    GATracker {
+        id: tracker
+        logLevel: GATracker.Debug
+        sendInterval: 20*1000
+        viewportSize: qsTr("%1x%2").arg(app.width).arg(app.height)
+        trackingID: "UA-64338289-1"
+    }
 
     Audio {
         id: sound

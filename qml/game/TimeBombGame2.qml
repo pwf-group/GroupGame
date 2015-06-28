@@ -7,6 +7,13 @@ import "../widget" as Widget
 Item {
     id: root
 
+    Stack.onStatusChanged: {
+        // change so that loading don't feel hang
+        if(Stack.status == Stack.Active) {
+            tracker.sendAppView("TimeBombGame2")
+        }
+    }
+
     property int seconds: 0
     property int minutes: 0
     property bool started: false

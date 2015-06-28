@@ -1,8 +1,17 @@
 import QtQuick 2.3
+import QtQuick.Controls 1.2
 import "../widget" as Widget
 
 Item {
     id: root
+
+    Stack.onStatusChanged: {
+        // change so that loading don't feel hang
+        if(Stack.status == Stack.Active) {
+            tracker.sendAppView("DiceGame")
+        }
+    }
+
     property int dice: 1
     property bool roll: false
 

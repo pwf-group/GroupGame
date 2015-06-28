@@ -24,3 +24,4 @@ QML_IMPORT_PATH =
 # Default rules for deployment.
 include(deployment.pri)
 include(myscreen/myscreen.pri)
+include(qt-google-analytics/qt-google-analytics.pri)

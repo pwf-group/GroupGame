@@ -4,6 +4,13 @@ import QtQuick.Controls 1.2
 Item {
     id: root
 
+    Stack.onStatusChanged: {
+        // change so that loading don't feel hang
+        if(Stack.status == Stack.Active) {
+            tracker.sendAppView("BottleLuckGame")
+        }
+    }
+
     property int counter: 1
     property int defaultSpinSpeed: 250
     property int animationDuration: defaultSpinSpeed
