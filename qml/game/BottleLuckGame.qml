@@ -1,5 +1,6 @@
 import QtQuick 2.3
 import QtQuick.Controls 1.2
+import QtMultimedia 5.0
 
 Item {
     id: root
@@ -8,6 +9,21 @@ Item {
         // change so that loading don't feel hang
         if(Stack.status == Stack.Active) {
             tracker.sendAppView("BottleLuckGame")
+        }
+    }
+
+    Audio {
+        id: sound
+        autoPlay: false
+        source: "qrc:/music/bottle-spin.wav"
+        //loops: Audio.Infinite
+        playbackRate: 1.27
+
+        function myPlay()
+        {
+            if (playbackState == Audio.PlayingState)
+                stop()
+            play()
         }
     }
 
@@ -78,11 +94,13 @@ Item {
             velocityTimer.stop()
             stopTimer.stop()
             bottleAnimation.restart()
+            sound.stop()
         }
         onReleased: {
             // start sequence of auto stop
             velocityTimer.start()
             stopTimer.start()
+            sound.myPlay()
         }
     }
 }

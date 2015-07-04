@@ -77,7 +77,7 @@ Item {
             anchors.centerIn: parent
             text: "RESET"
             onClicked: {
-                sound.play()
+                sound.myPlay()
                 grid.winner = -1
             }
         }

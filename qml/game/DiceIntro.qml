@@ -80,7 +80,7 @@ Item {
             anchors.horizontalCenter: parent.horizontalCenter
             text: "NEXT"
             onClicked: {
-                sound.play()
+                sound.myPlay()
                 stackView.push({
                     item: Qt.resolvedUrl("qrc:/game/DiceGame.qml"),
                     properties: {dice: slider.value}

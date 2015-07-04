@@ -68,7 +68,7 @@ Item {
         }
         text: "NEXT"
         onClicked: {
-            sound.play()
+            sound.myPlay()
             stackView.push(Qt.resolvedUrl("qrc:/game/TimeBoomGame.qml"))
         }
     }

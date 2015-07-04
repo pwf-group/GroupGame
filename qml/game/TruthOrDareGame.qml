@@ -25,6 +25,13 @@ Item {
         id: sound
         autoPlay: false
         source: "qrc:/music/shooter-action.wav"
+
+        function myPlay()
+        {
+            if (playbackState == Audio.PlayingState)
+                stop()
+            play()
+        }
     }
 
     Image {
@@ -48,7 +55,7 @@ Item {
             anchors.horizontalCenter: parent.horizontalCenter
             text: "Spawn Card"
             onClicked: {
-                sound.play()
+                sound.myPlay()
                 root.spawnCard()
             }
         }

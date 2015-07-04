@@ -63,7 +63,7 @@ Item {
             visible: !started
             text: "START"
             onClicked: {
-                sound.play()
+                sound.myPlay()
                 ticktock.play()
 
                 started = true
@@ -76,7 +76,7 @@ Item {
             visible: bombed
             text: "RESET"
             onClicked: {
-                sound.play()
+                sound.myPlay()
                 stackView.pop()
             }
         }

@@ -38,7 +38,7 @@ Item {
             anchors.horizontalCenter: parent.horizontalCenter
             text: "NEXT"
             onClicked: {
-                sound.play()
+                sound.myPlay()
                 stackView.push({
                     item: Qt.resolvedUrl("qrc:/game/TimeBombGame2.qml"),
                     properties: {seconds: timePicker.seconds, minutes: timePicker.minutes}

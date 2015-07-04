@@ -16,7 +16,9 @@ RESOURCES += \
 
 OTHER_FILES += \
     qml/*.qml \
-    qml/game/*.qml
+    qml/game/*.qml \
+    android-sources/AndroidManifest.xml \
+    android-sources/src/org/pwf/groupgame/MyActivity.java
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =

@@ -27,6 +27,8 @@
         <file>tick-tock.wav</file>
         <file>catch.wav</file>
         <file>shooter-action.wav</file>
+        <file>button.wav</file>
+        <file>bottle-spin.wav</file>
     </qresource>
     <qresource prefix="/cards">
         <file>cards/0.png</file>

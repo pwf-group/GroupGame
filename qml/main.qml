@@ -13,7 +13,7 @@ ApplicationWindow {
     property bool landscape: height<width?true:false
     property int minSize: width<height?width:height
 
-    FontLoader{ source: "qrc:/ka1.ttf"}
+    FontLoader{ source: "qrc:/chunky.ttf"}
     FontLoader{ source: "qrc:/Montague.ttf"}
 
     Component.onDestruction: tracker.endSession()
@@ -29,15 +29,23 @@ ApplicationWindow {
     Audio {
         id: sound
         autoPlay: false
-        source: "qrc:/music/catch.wav"
+        source: "qrc:/music/button.wav"
+
+        function myPlay()
+        {
+            if (playbackState == Audio.PlayingState)
+                stop()
+            play()
+        }
     }
 
-    Image {
+    BorderImage {
         anchors.fill: parent
-        source: "qrc:/image/main_bg.jpg"
-        fillMode: Image.Tile
-        sourceSize.width: parent.width
-        sourceSize.height: parent.height
+        border { left: 202; top: 190; right: 325; bottom: 615 }
+        horizontalTileMode: BorderImage.Stretch
+        verticalTileMode: BorderImage.Stretch
+        source: "qrc:/image/main_bg.png"
+        asynchronous: true
     }
 
     StackView {
@@ -50,7 +58,7 @@ ApplicationWindow {
             if( event.key === Qt.Key_Back || event.key === Qt.Key_Escape )
             {
                 if (stackView.depth > 1) {
-                    sound.play()
+                    sound.myPlay()
                     stackView.pop();
                     event.accepted = true;
                 }
@@ -85,7 +93,7 @@ ApplicationWindow {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    sound.play()
+                    sound.myPlay()
                     stackView.pop()
                 }
             }

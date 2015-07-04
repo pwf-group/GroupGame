@@ -26,6 +26,13 @@ Item {
         id: sound
         autoPlay: false
         source: "qrc:/music/shooter-action.wav"
+
+        function myPlay()
+        {
+            if (playbackState == Audio.PlayingState)
+                stop()
+            play()
+        }
     }
 
     Image {
@@ -56,7 +63,7 @@ Item {
             onClicked: {
                 count++;
 
-                sound.play();
+                sound.myPlay();
                 root.spawnCard();
             }
         }

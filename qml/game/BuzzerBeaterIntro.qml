@@ -84,7 +84,7 @@ Item {
             anchors.horizontalCenter: parent.horizontalCenter
             text: "NEXT"
             onClicked: {
-                sound.play()
+                sound.myPlay()
                 stackView.push({
                     item: Qt.resolvedUrl("qrc:/game/BuzzerBeaterGame.qml"),
                     properties: {players: slider.value}

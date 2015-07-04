@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/image">
-        <file>main_bg.jpg</file>
         <file>bottle_table.jpg</file>
         <file>bottle.png</file>
         <file>buzzer_default.png</file>
@@ -8,5 +7,6 @@
         <file>buzzer_red.png</file>
         <file>bomb_background.png</file>
         <file>card_background.png</file>
+        <file>main_bg.png</file>
     </qresource>
 </RCC>
