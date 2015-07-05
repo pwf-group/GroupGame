@@ -33,10 +33,7 @@ Item {
     ListView {
         id: listView
         anchors {
-            left: parent.left
-            right: parent.right
-            top: parent.top
-            bottom: btnNext.top
+            fill: boundaryBox
             margins: 36 * dp
         }
         spacing: 4 * dp
@@ -56,20 +53,6 @@ Item {
             width: parent.width - 24 * dp
             font.pixelSize: 20 * dp
             text: (model.index + 1) + ". " + model.text
-        }
-    }
-
-    Widget.Button {
-        id: btnNext
-        anchors {
-            bottom: boundaryBox.bottom
-            bottomMargin: 24 * dp
-            horizontalCenter: boundaryBox.horizontalCenter
-        }
-        text: "NEXT"
-        onClicked: {
-            sound.myPlay()
-            stackView.push(Qt.resolvedUrl("qrc:/game/TimeBoomGame.qml"))
         }
     }
 }

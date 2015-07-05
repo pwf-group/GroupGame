@@ -15,6 +15,14 @@ Item {
     property int dice: 1
     property bool roll: false
 
+    Image {
+        anchors.fill: parent
+        anchors.margins: 24 * dp
+        z: -1
+        source: "qrc:/image/card_background.png"
+        fillMode: Image.Tile
+    }
+
     Column {
         id: column
         anchors.centerIn: parent

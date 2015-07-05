@@ -55,30 +55,38 @@ Item {
         source: "qrc:/music/tick-tock.wav"
     }
 
-    Column {
-        anchors.centerIn: parent
+    Widget.Button {
+        visible: !started
 
-        Widget.Button {
-            anchors.horizontalCenter: parent.horizontalCenter
-            visible: !started
-            text: "START"
-            onClicked: {
-                sound.myPlay()
-                ticktock.play()
+        text: "start"
 
-                started = true
-                alarm.stop()
-                timer.startTimer(root.minutes, root.seconds)
-            }
+        Component.onCompleted: {
+            anchorBottomRight()
+            setGreen()
         }
-        Widget.Button {
-            anchors.horizontalCenter: parent.horizontalCenter
-            visible: bombed
-            text: "RESET"
-            onClicked: {
-                sound.myPlay()
-                stackView.pop()
-            }
+
+        onClicked: {
+            sound.myPlay()
+            ticktock.play()
+
+            started = true
+            alarm.stop()
+            timer.startTimer(root.minutes, root.seconds)
+        }
+    }
+
+    Widget.Button {
+        visible: bombed
+
+        text: "reset"
+        Component.onCompleted: {
+            anchorBottomRight()
+            setRed()
+        }
+
+        onClicked: {
+            sound.myPlay()
+            stackView.pop()
         }
     }
 }

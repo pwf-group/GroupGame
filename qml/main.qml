@@ -2,6 +2,7 @@ import QtQuick 2.3
 import QtQuick.Controls 1.2
 import QtMultimedia 5.0
 import GoogleAnalytics 0.1
+import "widget" as Widget
 
 ApplicationWindow {
     id: app
@@ -13,8 +14,8 @@ ApplicationWindow {
     property bool landscape: height<width?true:false
     property int minSize: width<height?width:height
 
-    FontLoader{ source: "qrc:/chunky.ttf"}
-    FontLoader{ source: "qrc:/Montague.ttf"}
+    FontLoader{ source: "qrc:/chunky.ttf" }
+    FontLoader{ source: "qrc:/GosmickSans.ttf" }
 
     Component.onDestruction: tracker.endSession()
 
@@ -66,37 +67,21 @@ ApplicationWindow {
         }
     }
 
-    statusBar: Rectangle {
+    Widget.Button {
         enabled: stackView.depth>1
         opacity: enabled?1:0
         visible: enabled
-        anchors {
-            left: parent.left
-            right: parent.right
-            bottom: parent.bottom
+
+        text: "back"
+
+        Component.onCompleted: {
+            anchorBottomLeft()
+            setRed()
         }
-        height: 56 * dp
-        color: "#f4a460"
 
-        Behavior on opacity { NumberAnimation{duration:500} }
-
-        Text {
-            anchors {
-                verticalCenter: parent.verticalCenter
-                left: parent.left
-                leftMargin: 24 * dp
-            }
-            text: "<"
-            font.pixelSize: 40 * dp
-            color: "#FFFFFF"
-
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    sound.myPlay()
-                    stackView.pop()
-                }
-            }
+        onClicked: {
+            sound.myPlay()
+            stackView.pop()
         }
     }
 }

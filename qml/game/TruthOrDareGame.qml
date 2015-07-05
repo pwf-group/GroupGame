@@ -35,38 +35,35 @@ Item {
     }
 
     Image {
+        id: background
         anchors.fill: parent
-        anchors.margins: 20 * dp
+        anchors.margins: 24 * dp
         z: -1
         source: "qrc:/image/card_background.png"
         fillMode: Image.Tile
     }
 
-    Column {
-        z: 2
-        anchors {
-            horizontalCenter: parent.horizontalCenter
-            bottom: parent.bottom
-            bottomMargin: 20 * dp
+    MouseArea {
+        id: spawnButton
+        anchors.fill: background
+        onClicked: {
+            sound.myPlay()
+            root.spawnCard()
         }
-        spacing: 3 * dp
+    }
 
-        Widget.Button {
-            anchors.horizontalCenter: parent.horizontalCenter
-            text: "Spawn Card"
-            onClicked: {
-                sound.myPlay()
-                root.spawnCard()
-            }
-        }
-        Widget.Button {
-            anchors.horizontalCenter: parent.horizontalCenter
-            text: "Reset"
-            onClicked: {
-                while(cardsList.length != 0)
-                    cardsList.pop().destroy()
-            }
+    Widget.Button {
+        z: 3
+        text: "reset"
+
+        Component.onCompleted: {
+            anchorBottomRight()
+            setGreen()
         }
 
+        onClicked: {
+            while(cardsList.length != 0)
+                cardsList.pop().destroy()
+        }
     }
 }

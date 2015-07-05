@@ -35,7 +35,7 @@ Item {
 
     Image {
         anchors.fill: parent
-        anchors.margins: 15 * dp
+        anchors.margins: 24 * dp
         source: "qrc:/image/bottle_table.jpg"
     }
 

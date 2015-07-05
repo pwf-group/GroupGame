@@ -36,14 +36,29 @@ Item {
 
         Widget.Button {
             anchors.horizontalCenter: parent.horizontalCenter
-            text: "NEXT"
+            text: "help"
+
             onClicked: {
                 sound.myPlay()
-                stackView.push({
-                    item: Qt.resolvedUrl("qrc:/game/TimeBombGame2.qml"),
-                    properties: {seconds: timePicker.seconds, minutes: timePicker.minutes}
-                })
+                stackView.push("qrc:/game/TimeBoomIntro.qml")
             }
+        }
+    }
+
+    Widget.Button {
+        text: "next"
+
+        Component.onCompleted: {
+            anchorBottomRight()
+            setGreen()
+        }
+
+        onClicked: {
+            sound.myPlay()
+            stackView.push({
+                item: Qt.resolvedUrl("qrc:/game/TimeBombGame2.qml"),
+                properties: {seconds: timePicker.seconds, minutes: timePicker.minutes}
+            })
         }
     }
 }

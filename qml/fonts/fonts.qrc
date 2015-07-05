@@ -1,7 +1,7 @@
 <RCC>
     <qresource prefix="/">
-        <file>Montague.ttf</file>
         <file>chunky.ttf</file>
-        <file>Karmatic Arcade.ttf</file>
+        <file>GosmickSans.ttf</file>
+        <file>GosmickSansBold.ttf</file>
     </qresource>
 </RCC>
