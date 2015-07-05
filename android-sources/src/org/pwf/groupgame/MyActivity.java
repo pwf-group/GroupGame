@@ -41,6 +41,7 @@ import android.view.ViewGroup;
 import android.view.Gravity;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.util.DisplayMetrics;
 
 import org.qtproject.qt5.android.bindings.QtActivity;
 import org.qtproject.qt5.android.QtNative;
@@ -63,10 +64,9 @@ public class MyActivity extends QtActivity {
         mAdView.setAdSize(AdSize.BANNER);
         View view = getWindow().getDecorView().getRootView();
         if (view instanceof ViewGroup) {
+            float dp = getResources().getDisplayMetrics().density;
             viewGroup = (ViewGroup) view;
-            ViewGroup.LayoutParams ad_layout_params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            //RelativeLayout.LayoutParams ad_layout_params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.FILL_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-            //ad_layout_params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+            ViewGroup.LayoutParams ad_layout_params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, (int)(100*dp));
 
             mAdView.setLayoutParams(ad_layout_params);
             mAdView.setAdListener(new AdListener() {
