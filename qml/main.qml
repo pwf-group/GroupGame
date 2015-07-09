@@ -2,6 +2,7 @@ import QtQuick 2.3
 import QtQuick.Controls 1.2
 import QtMultimedia 5.0
 import GoogleAnalytics 0.1
+import Qt.labs.settings 1.0
 import "widget" as Widget
 
 ApplicationWindow {
@@ -27,10 +28,16 @@ ApplicationWindow {
         trackingID: "UA-64338289-1"
     }
 
+    Settings {
+        id: settings
+        property bool sound: true
+    }
+
     Audio {
         id: sound
         autoPlay: false
         source: "qrc:/music/button.wav"
+        volume: settings.sound? 1.0: 0.0
 
         function myPlay()
         {
@@ -40,18 +47,31 @@ ApplicationWindow {
         }
     }
 
-    BorderImage {
+    Image {
         anchors.fill: parent
-        border { left: 202; top: 190; right: 325; bottom: 615 }
-        horizontalTileMode: BorderImage.Stretch
-        verticalTileMode: BorderImage.Stretch
-        source: "qrc:/image/main_bg.png"
-        asynchronous: true
+        source: bg_image()
+
+        function bg_image() {
+            if (parent.width > parent.height)
+                return "qrc:/image/main_bg_landscape.png"
+            else
+                return "qrc:/image/main_bg_portrait.png"
+        }
     }
+
+//    BorderImage {
+//        anchors.fill: parent
+//        border { left: 202; top: 190; right: 325; bottom: 615 }
+//        horizontalTileMode: BorderImage.Stretch
+//        verticalTileMode: BorderImage.Stretch
+//        source: "qrc:/image/main_bg.png"
+//        asynchronous: true
+//    }
 
     StackView {
         id: stackView
         anchors.fill: parent
+        anchors.topMargin: 50 * dp
         initialItem: Qt.resolvedUrl("qrc:/HomePage.qml")
 
         focus: true

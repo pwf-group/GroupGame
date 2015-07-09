@@ -8,5 +8,7 @@
         <file>bomb_background.png</file>
         <file>card_background.png</file>
         <file>main_bg.png</file>
+        <file>main_bg_landscape.png</file>
+        <file>main_bg_portrait.png</file>
     </qresource>
 </RCC>

@@ -18,6 +18,7 @@ Item {
         source: "qrc:/music/bottle-spin.wav"
         //loops: Audio.Infinite
         playbackRate: 1.27
+        volume: settings.sound? 1.0: 0.0
 
         function myPlay()
         {

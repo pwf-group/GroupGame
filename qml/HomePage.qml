@@ -34,7 +34,7 @@ Item {
         font.family: "chunky"
         color: "#552700"
 
-        text: "Good Game"
+        text: "GroupGame"
     }
 
     Flickable {
@@ -51,6 +51,7 @@ Item {
         boundsBehavior: Flickable.StopAtBounds
         contentWidth: parent.width
         contentHeight: itemHolder.height
+        bottomMargin: 50 * dp
 
         Column {
             id: itemHolder
@@ -113,6 +114,7 @@ Item {
         ListElement { name: "Card Deck"; link: "qrc:/game/CardDeckGame.qml" }
         ListElement { name: "Truth or Dare"; link: "qrc:/game/TruthOrDareGame.qml" }
         ListElement { name: "Buzzer Beater"; link: "qrc:/game/BuzzerBeaterIntro.qml" }
+        ListElement { name: "Setting"; link: "qrc:/SettingPage.qml" }
         ListElement { name: "Exit"; link: "" }
     }
 }

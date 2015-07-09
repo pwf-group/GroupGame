@@ -26,6 +26,7 @@ Item {
         id: sound
         autoPlay: false
         source: "qrc:/music/shooter-action.wav"
+        volume: settings.sound? 1.0: 0.0
 
         function myPlay()
         {

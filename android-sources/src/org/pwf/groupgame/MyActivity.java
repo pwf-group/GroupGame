@@ -78,7 +78,7 @@ public class MyActivity extends QtActivity {
                 }
             });
             AdRequest adRequest = new AdRequest.Builder()
-            .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+            //.addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
             //.addTestDevice("INSERT_YOUR_HASHED_DEVICE_ID_HERE")
             .build();
             mAdView.loadAd(adRequest);
