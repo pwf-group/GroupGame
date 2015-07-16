@@ -57,14 +57,24 @@ Item {
         }
     }
 
-    Widget.Button {
-        anchors.horizontalCenter: column.horizontalCenter
-        anchors.top: column.bottom
-        anchors.topMargin: 40 * dp
+    Timer {
+        id: stopTimer
+        interval: 2000
+        repeat: false
+        onTriggered: {
+            roll = false
+        }
+    }
 
-        text: !roll? "ROLL":"STOP"
-        onClicked: {
-            roll = !roll
+    MouseArea {
+        anchors.fill: parent
+        anchors.margins: 24 * dp
+        onPressed: {
+            roll = true
+            stopTimer.stop()
+        }
+        onReleased: {
+            stopTimer.start()
         }
     }
 }

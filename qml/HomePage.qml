@@ -8,6 +8,11 @@ Item {
         // change so that loading don't feel hang
         if(Stack.status == Stack.Active) {
             tracker.sendAppView("HomePage")
+
+            if(settings.reviewCnt++ > 255) {
+                settings.reviewCnt = 0
+                review.show()
+            }
         }
     }
 
@@ -115,5 +120,9 @@ Item {
         ListElement { name: "Buzzer Beater"; link: "qrc:/game/BuzzerBeaterIntro.qml" }
         ListElement { name: "Setting"; link: "qrc:/SettingPage.qml" }
         ListElement { name: "Exit"; link: "" }
+    }
+
+    PlaystoreReviewDialog {
+        id: review
     }
 }

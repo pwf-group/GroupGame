@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>HomePage.qml</file>
         <file>SettingPage.qml</file>
+        <file>PlaystoreReviewDialog.qml</file>
     </qresource>
 </RCC>

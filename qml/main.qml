@@ -31,6 +31,7 @@ ApplicationWindow {
     Settings {
         id: settings
         property bool sound: true
+        property int  reviewCnt: 0
     }
 
     Audio {
@@ -58,15 +59,6 @@ ApplicationWindow {
                 return "qrc:/image/main_bg_portrait.png"
         }
     }
-
-//    BorderImage {
-//        anchors.fill: parent
-//        border { left: 202; top: 190; right: 325; bottom: 615 }
-//        horizontalTileMode: BorderImage.Stretch
-//        verticalTileMode: BorderImage.Stretch
-//        source: "qrc:/image/main_bg.png"
-//        asynchronous: true
-//    }
 
     StackView {
         id: stackView
