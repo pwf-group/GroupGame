@@ -17,6 +17,10 @@ MyScreen::MyScreen(QObject *parent) : QObject(parent)
      QAndroidJniObject metrics = resource.callObjectMethod("getDisplayMetrics","()Landroid/util/DisplayMetrics;");
      setDpi(metrics.getField<int>("densityDpi"));
      setDp(metrics.getField<float>("density"));
+#elif  defined(Q_OS_IOS)
+    setDpi(QGuiApplication::primaryScreen()->physicalDotsPerInch() * QGuiApplication::primaryScreen()->devicePixelRatio());
+    //setDp(dpi() / 160.0);
+    setDp(1.0);
  #else
     setDpi(QGuiApplication::primaryScreen()->physicalDotsPerInch());
     //setDp(dpi()/120);

@@ -1,8 +1,15 @@
 TEMPLATE = app
 
-QT += qml quick
+QT += qml quick multimedia
 
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android-sources
+
+ios {
+    QMAKE_INFO_PLIST = ios-sources/Info.plist
+    ios_icon.files = $$files($$PWD/ios-sources/AppIcon*.png)
+    data.files = $$files($$PWD/qml/widget/*.wav)
+    QMAKE_BUNDLE_DATA += ios_icon data
+}
 
 SOURCES += \
     src/main.cpp
