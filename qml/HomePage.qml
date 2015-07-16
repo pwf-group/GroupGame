@@ -51,7 +51,6 @@ Item {
         boundsBehavior: Flickable.StopAtBounds
         contentWidth: parent.width
         contentHeight: itemHolder.height
-        bottomMargin: 50 * dp
 
         Column {
             id: itemHolder

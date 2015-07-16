@@ -71,7 +71,7 @@ ApplicationWindow {
     StackView {
         id: stackView
         anchors.fill: parent
-        anchors.topMargin: 50 * dp
+        anchors.topMargin: 15 * dp
         initialItem: Qt.resolvedUrl("qrc:/HomePage.qml")
 
         focus: true
