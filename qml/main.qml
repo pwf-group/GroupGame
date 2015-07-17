@@ -33,6 +33,8 @@ ApplicationWindow {
         property bool sound: true
         property int  reviewCnt: 0
         property bool reviewOk: false
+        property string randomNumberMin: "1"
+        property string randomNumberMax: "10"
     }
 
     Audio {

@@ -20,6 +20,7 @@
         <file>BoundingBox.qml</file>
         <file>Dice.qml</file>
         <file>Cards.qml</file>
+        <file>TextField.qml</file>
     </qresource>
     <qresource prefix="/music">
         <file>alarm-clock.wav</file>

@@ -114,6 +114,7 @@ Item {
         ListElement { name: "Card Deck"; link: "qrc:/game/CardDeckGame.qml" }
         ListElement { name: "Truth or Dare"; link: "qrc:/game/TruthOrDareGame.qml" }
         ListElement { name: "Buzzer Beater"; link: "qrc:/game/BuzzerBeaterIntro.qml" }
+        ListElement { name: "Random Number"; link: "qrc:/game/RandomNumberIntro.qml" }
         ListElement { name: "Setting"; link: "qrc:/SettingPage.qml" }
         ListElement { name: "Exit"; link: "" }
     }

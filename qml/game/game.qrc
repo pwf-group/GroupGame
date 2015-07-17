@@ -12,5 +12,7 @@
         <file>CardsCreation.js</file>
         <file>CardDeckGame.qml</file>
         <file>TruthOrDareCreation.js</file>
+        <file>RandomNumberIntro.qml</file>
+        <file>RandomNumberGame.qml</file>
     </qresource>
 </RCC>
