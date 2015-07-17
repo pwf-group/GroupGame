@@ -8,11 +8,7 @@ Item {
         // change so that loading don't feel hang
         if(Stack.status == Stack.Active) {
             tracker.sendAppView("HomePage")
-
-            if(settings.reviewCnt++ > 255) {
-                settings.reviewCnt = 0
-                review.show()
-            }
+            review.addCount()
         }
     }
 
@@ -124,5 +120,16 @@ Item {
 
     PlaystoreReviewDialog {
         id: review
+
+        function addCount() {
+            var limitCnt = 64
+            if(settings.reviewOk)
+                limitCnt = 512
+
+            if(settings.reviewCnt++ > limitCnt) {
+                settings.reviewCnt = 0
+                review.show()
+            }
+        }
     }
 }

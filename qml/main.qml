@@ -32,6 +32,7 @@ ApplicationWindow {
         id: settings
         property bool sound: true
         property int  reviewCnt: 0
+        property bool reviewOk: false
     }
 
     Audio {

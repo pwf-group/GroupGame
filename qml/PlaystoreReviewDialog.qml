@@ -67,6 +67,7 @@ Rectangle {
                     text: "Okay!"
                     Component.onCompleted: setGreen()
                     onClicked: {
+                        settings.reviewOk = true
                         tracker.sendEvent("review", "okay")
                         Qt.openUrlExternally("https://play.google.com/store/apps/details?id=org.pwf.groupgame")
                         root.hide()
