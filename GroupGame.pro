@@ -24,6 +24,7 @@ RESOURCES += \
 OTHER_FILES += \
     qml/*.qml \
     qml/game/*.qml \
+    qml/widget/*.qml \
     android-sources/AndroidManifest.xml \
     android-sources/src/org/pwf/groupgame/MyActivity.java
 

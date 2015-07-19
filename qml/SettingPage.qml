@@ -1,6 +1,4 @@
 import QtQuick 2.3
-import QtQuick.Controls 1.2
-import QtQuick.Controls.Styles 1.2
 import "widget" as Widget
 
 Item {
@@ -32,34 +30,16 @@ Item {
         anchors.centerIn: boundaryBox
         spacing: 24 * dp
 
-        CheckBox {
+        Widget.CheckBox {
             text: qsTr("Sound")
             checked: settings.sound
-
             onClicked: settings.sound = checked
+        }
 
-            style: CheckBoxStyle {
-                indicator: Rectangle {
-                        implicitWidth: 24 * dp
-                        implicitHeight: 24 * dp
-                        radius: 4 * dp
-                        border.color: control.activeFocus ? "darkblue" : "gray"
-                        border.width: 1 * dp
-                        Rectangle {
-                            visible: control.checked
-                            color: "#555"
-                            border.color: "#333"
-                            radius: 1 * dp
-                            anchors.margins: 4 * dp
-                            anchors.fill: parent
-                        }
-                }
-                label: Widget.Text {
-                    text: control.text
-                    font.pixelSize: 24 * dp
-                }
-                spacing: 24 * dp
-            }
+        Widget.CheckBox {
+            text: qsTr("Rate us popup")
+            checked: !settings.reviewOk
+            onClicked: settings.reviewOk = !checked
         }
     }
 }

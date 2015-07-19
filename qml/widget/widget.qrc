@@ -21,6 +21,8 @@
         <file>Dice.qml</file>
         <file>Cards.qml</file>
         <file>TextField.qml</file>
+        <file>BingoBox.qml</file>
+        <file>CheckBox.qml</file>
     </qresource>
     <qresource prefix="/music">
         <file>alarm-clock.wav</file>

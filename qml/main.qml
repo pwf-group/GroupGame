@@ -35,6 +35,8 @@ ApplicationWindow {
         property bool reviewOk: false
         property string randomNumberMin: "1"
         property string randomNumberMax: "10"
+        property string bingoNumberSeq: ""
+        property string bingoCheckSeq: ""
     }
 
     Audio {

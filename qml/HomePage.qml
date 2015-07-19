@@ -115,6 +115,7 @@ Item {
         ListElement { name: "Truth or Dare"; link: "qrc:/game/TruthOrDareGame.qml" }
         ListElement { name: "Buzzer Beater"; link: "qrc:/game/BuzzerBeaterIntro.qml" }
         ListElement { name: "Random Number"; link: "qrc:/game/RandomNumberIntro.qml" }
+        ListElement { name: "Bingo"; link: "qrc:/game/BingoIntro.qml" }
         ListElement { name: "Setting"; link: "qrc:/SettingPage.qml" }
         ListElement { name: "Exit"; link: "" }
     }
@@ -125,7 +126,7 @@ Item {
         function addCount() {
             var limitCnt = 64
             if(settings.reviewOk)
-                limitCnt = 512
+                limitCnt = 1024
 
             if(settings.reviewCnt++ > limitCnt) {
                 settings.reviewCnt = 0

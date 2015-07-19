@@ -14,5 +14,7 @@
         <file>TruthOrDareCreation.js</file>
         <file>RandomNumberIntro.qml</file>
         <file>RandomNumberGame.qml</file>
+        <file>BingoGame.qml</file>
+        <file>BingoIntro.qml</file>
     </qresource>
 </RCC>
