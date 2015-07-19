@@ -21,7 +21,7 @@ Item {
             width: parent.width
             wrapMode: Text.WordWrap
             font.bold: true
-            font.pointSize: 20 * dp
+            font.pixelSize: 20 * dp
         }
 
         Widget.BingoBox {
