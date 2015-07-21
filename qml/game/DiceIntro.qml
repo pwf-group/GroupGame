@@ -30,6 +30,7 @@ Item {
 
         Widget.Slider {
             id: slider
+            width: parent.width
             minimumValue: 1
             maximumValue: 6
             value: 1

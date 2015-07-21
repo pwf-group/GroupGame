@@ -72,6 +72,7 @@ Item {
                     Text {
                         id: gameText
                         anchors.centerIn: parent
+                        width: parent.width - 20 * dp
                         horizontalAlignment: Text.AlignHCenter
                         fontSizeMode: Text.Fit
                         font.pixelSize: 45 * dp
