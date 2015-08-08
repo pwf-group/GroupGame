@@ -84,9 +84,6 @@ Item {
                     MouseArea {
                         anchors.fill: parent
                         onClicked: {
-                            if (model.name === "Exit")
-                                Qt.quit()
-
                             sound.myPlay()
                             stackView.push(Qt.resolvedUrl(model.link))
                         }
@@ -96,10 +93,7 @@ Item {
                     }
 
                     function item_color() {
-                        if (model.name === "Exit")
-                            return "#802415"
-                        else
-                            return "#804515"
+                        return "#804515"
                     }
                 }
             }
@@ -118,7 +112,6 @@ Item {
         ListElement { name: "Random Number"; link: "qrc:/game/RandomNumberIntro.qml" }
         ListElement { name: "Bingo"; link: "qrc:/game/BingoIntro.qml" }
         ListElement { name: "Setting"; link: "qrc:/SettingPage.qml" }
-        ListElement { name: "Exit"; link: "" }
     }
 
     PlaystoreReviewDialog {

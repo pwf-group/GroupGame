@@ -1,6 +1,7 @@
 import QtQuick 2.3
 import QtQuick.Controls 1.2
 import QtQuick.Controls.Styles 1.2
+import QtMultimedia 5.0
 import "../widget" as Widget
 
 Item {
@@ -14,6 +15,20 @@ Item {
     }
 
     property int players: 4
+
+    Audio {
+        id: buzzer
+        autoPlay: false
+        source: "qrc:/music/short-buzzer.wav"
+        volume: settings.sound? 1.0: 0.0
+
+        function myPlay()
+        {
+            if (playbackState == Audio.PlayingState)
+                stop()
+            play()
+        }
+    }
 
     GridView {
         id: grid
@@ -56,8 +71,10 @@ Item {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    if (grid.winner == -1)
+                    if (grid.winner == -1) {
                         grid.winner = index
+                        buzzer.myPlay()
+                    }
                 }
             }
         }
