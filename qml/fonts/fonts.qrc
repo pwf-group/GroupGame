@@ -3,5 +3,6 @@
         <file>chunky.ttf</file>
         <file>GosmickSans.ttf</file>
         <file>GosmickSansBold.ttf</file>
+        <file>fontawesome.ttf</file>
     </qresource>
 </RCC>

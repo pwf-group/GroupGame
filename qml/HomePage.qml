@@ -38,13 +38,65 @@ Item {
         text: "GroupGame"
     }
 
+    Row {
+        enabled: flickable.atYEnd
+        visible: enabled
+        anchors {
+            bottom: parent.bottom
+            right: title.right
+            bottomMargin: 15 * dp
+        }
+        spacing: 15 * dp
+
+        Text {
+            id: about
+            font.pixelSize: 40 * dp
+            font.family: "fontawesome"
+            color: "#552700"
+            text: "\uf05a"
+            Behavior on color { ColorAnimation { duration: 200 } }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    sound.myPlay()
+                    stackView.push(Qt.resolvedUrl("qrc:/AboutPage.qml"))
+                }
+                onPressed: parent.color = "#AA6F39"
+                onReleased: parent.color = "#552700"
+                onCanceled: parent.color = "#552700"
+
+            }
+        }
+        Text {
+            id: setting
+            font.pixelSize: 40 * dp
+            font.family: "fontawesome"
+            color: "#552700"
+            text: "\uf013"
+            Behavior on color { ColorAnimation { duration: 200 } }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    sound.myPlay()
+                    stackView.push(Qt.resolvedUrl("qrc:/SettingPage.qml"))
+                }
+                onPressed: parent.color = "#AA6F39"
+                onReleased: parent.color = "#552700"
+                onCanceled: parent.color = "#552700"
+            }
+        }
+    }
+
     Flickable {
+        id: flickable
         z: -1
         anchors {
             top: title.bottom
             topMargin: 24 * dp
             bottom: parent.bottom
-            bottomMargin: 50 * dp
+            bottomMargin: 65 * dp
             left: parent.left
             right: parent.right
         }
@@ -111,7 +163,6 @@ Item {
         ListElement { name: "Buzzer Beater"; link: "qrc:/game/BuzzerBeaterIntro.qml" }
         ListElement { name: "Random Number"; link: "qrc:/game/RandomNumberIntro.qml" }
         ListElement { name: "Bingo"; link: "qrc:/game/BingoIntro.qml" }
-        ListElement { name: "Setting"; link: "qrc:/SettingPage.qml" }
     }
 
     PlaystoreReviewDialog {

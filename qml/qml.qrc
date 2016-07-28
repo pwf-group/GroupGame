@@ -4,5 +4,6 @@
         <file>HomePage.qml</file>
         <file>SettingPage.qml</file>
         <file>PlaystoreReviewDialog.qml</file>
+        <file>AboutPage.qml</file>
     </qresource>
 </RCC>

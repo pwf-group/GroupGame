@@ -17,6 +17,7 @@ ApplicationWindow {
 
     FontLoader{ source: "qrc:/chunky.ttf" }
     FontLoader{ source: "qrc:/GosmickSans.ttf" }
+    FontLoader{ source: "qrc:/fontawesome.ttf" }
 
     Component.onDestruction: tracker.endSession()
 
